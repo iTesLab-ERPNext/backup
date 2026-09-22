@@ -1,0 +1,42 @@
+{% extends "templates/web.html" %}
+{% from "erpnext/templates/includes/macros.html" import product_image %}
+
+{% block title %}
+  Liste des employés
+{% endblock %}
+
+{% block breadcrumbs %}
+  {% include "templates/includes/breadcrumbs.html" %}
+{% endblock %}
+
+{% block header %}
+  <h3 class="m-0">Liste des employés</h3>
+{% endblock %}
+
+{% block page_content %}
+  <div class="employee-list">
+    {% if employees %}
+      {% for emp in employees %}
+        <div class="employee-card row align-items-center mb-3 p-3 border rounded">
+          <div class="col-2">
+            {% if emp.image %}
+              {{ product_image(emp.image, no_border=True) }}
+            {% else %}
+              <div class="no-image" style="min-height: 80px; width: 80px; background: #ddd; display:flex; align-items:center; justify-content:center;">
+                {{ emp.first_name[0] }}{{ emp.last_name[0] }}
+              </div>
+            {% endif %}
+          </div>
+          <div class="col-8">
+            <h5>{{ emp.first_name }} {{ emp.last_name }}</h5>
+            <p class="text-muted">{{ emp.position or "Poste non renseigné" }}</p>
+            <p class="small text-muted">{{ emp.department or "Département non renseigné" }}</p>
+          </div>
+          <div class="col-2 text-right">
+            <a href="/employee/{{ emp.name }}" class="btn btn-sm btn-primary">Voir</a>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>Aucun employé trouvé.</p>
+

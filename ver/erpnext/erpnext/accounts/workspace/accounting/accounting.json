@@ -1,0 +1,664 @@
+{
+ "charts": [
+  {
+   "chart_name": "Profit and Loss",
+   "label": "Profit and Loss"
+  }
+ ],
+ "content": "[{\"id\":\"nDhfcJYbKH\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Profit and Loss\",\"col\":12}},{\"id\":\"VVvJ1lUcfc\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Outgoing Bills\",\"col\":3}},{\"id\":\"Vlj2FZtlHV\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Incoming Bills\",\"col\":3}},{\"id\":\"VVVjQVAhPf\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Incoming Payment\",\"col\":3}},{\"id\":\"DySNdlysIW\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Outgoing Payment\",\"col\":3}},{\"id\":\"9k1rDm2C0l\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"NB_mWIsZN-\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h3\\\">Ma\u00eetres Comptables</span>\",\"col\":12}},{\"id\":\"2jUuq1QTEF\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Company\",\"col\":\"3\"}},{\"id\":\"GdrTmbyaTb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Accounts Settings\",\"col\":\"3\"}},{\"id\":\"pMywM0nhlj\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chart of Accounts\",\"col\":3}},{\"id\":\"azEbdOr_Me\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Fiscal Year\",\"col\":\"3\"}},{\"id\":\"EoNn1GRlCd\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Accounting Dimension\",\"col\":\"3\"}},{\"id\":\"Y0-dLjPGWf\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Finance Book\",\"col\":\"3\"}},{\"id\":\"uuJyIAe87h\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Accounting Period\",\"col\":\"3\"}},{\"id\":\"WaPEkYjZXA\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Term\",\"col\":\"3\"}},{\"id\":\"k4LNLQmidI\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h3\\\">Paiements</span>\",\"col\":12}},{\"id\":\"_KUeI7FbSi\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Entry\",\"col\":\"3\"}},{\"id\":\"vuFCa0iziY\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Journal Entry\",\"col\":\"3\"}},{\"id\":\"cASeZH2Plv\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Journal Entry Template\",\"col\":\"3\"}},{\"id\":\"HM03cQX7vy\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Terms and Conditions\",\"col\":\"3\"}},{\"id\":\"5HXCm1R26e\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Mode of Payment\",\"col\":\"3\"}},{\"id\":\"f8TVM6ss1S\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h3\\\">Ma\u00eetres en fiscalit\u00e9</span>\",\"col\":12}},{\"id\":\"roDP4Dbw34\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Taxes and Charges Template\",\"col\":\"3\"}},{\"id\":\"PxN1pKPZXp\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Item Tax Template\",\"col\":\"3\"}},{\"id\":\"ql2yYu9vKU\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Tax Category\",\"col\":\"3\"}},{\"id\":\"ig5LfntiZX\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Tax Rule\",\"col\":\"3\"}},{\"id\":\"bPhqJxroTS\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Tax Withholding Category\",\"col\":\"3\"}},{\"id\":\"Nrw5DIa2UR\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h3\\\">Centre de co\u00fbts et budg\u00e9tisation</span>\",\"col\":12}},{\"id\":\"3_24yg2jqO\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Cost Center\",\"col\":\"3\"}},{\"id\":\"jNVw1idLz0\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Budget\",\"col\":\"3\"}},{\"id\":\"aUL7Z4u4Re\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Accounting Dimension\",\"col\":\"3\"}},{\"id\":\"zCqOdMY4qZ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Cost Center Allocation\",\"col\":\"3\"}},{\"id\":\"dcEC25A8Mg\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Budget Variance Report\",\"col\":\"3\"}},{\"id\":\"KTxiDefYph\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h3\\\">Multi-devise</span>\",\"col\":12}},{\"id\":\"9-osMLZOt8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Currency\",\"col\":\"3\"}},{\"id\":\"C0TlH_cT0G\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Currency Exchange\",\"col\":\"3\"}},{\"id\":\"sIRJ6lkyCz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Exchange Rate Revaluation\",\"col\":\"3\"}},{\"id\":\"zn-BWaR981\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h3\\\">Banque</span>\",\"col\":12}},{\"id\":\"UD-LMrwz2a\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bank\",\"col\":\"3\"}},{\"id\":\"dU_fEHaTUI\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bank Account\",\"col\":\"3\"}},{\"id\":\"5UQXApeKSL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bank Clearance\",\"col\":\"3\"}},{\"id\":\"355O2TW_s6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bank Reconciliation Tool\",\"col\":\"3\"}},{\"id\":\"JuthWBorwn\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h3\\\">Ouverture et fermeture</span>\",\"col\":12}},{\"id\":\"zXyC2TcVoh\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Opening Invoice Creation Tool\",\"col\":\"3\"}},{\"id\":\"H9usPB7IG8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Period Closing Voucher\",\"col\":\"3\"}},{\"id\":\"qU2dfvCNsg\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chart of Accounts Importer\",\"col\":\"3\"}}]",
+ "creation": "2026-07-17 15:27:59.276772",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "accounting",
+ "idx": 0,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "Accounting",
+ "links": [
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Currency",
+   "link_count": 0,
+   "link_to": "Currency",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Currency Exchange",
+   "link_count": 0,
+   "link_to": "Currency Exchange",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Exchange Rate Revaluation",
+   "link_count": 0,
+   "link_to": "Exchange Rate Revaluation",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Subscription Plan",
+   "link_count": 0,
+   "link_to": "Subscription Plan",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Subscription",
+   "link_count": 0,
+   "link_to": "Subscription",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Subscription Settings",
+   "link_count": 0,
+   "link_to": "Subscription Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Shareholder",
+   "link_count": 0,
+   "link_to": "Shareholder",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Share Transfer",
+   "link_count": 0,
+   "link_to": "Share Transfer",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "Share Transfer",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Share Ledger",
+   "link_count": 0,
+   "link_to": "Share Ledger",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "Share Transfer",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Share Balance",
+   "link_count": 0,
+   "link_to": "Share Balance",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Chart of Cost Centers",
+   "link_count": 0,
+   "link_to": "Cost Center",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Budget",
+   "link_count": 0,
+   "link_to": "Budget",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Accounting Dimension",
+   "link_count": 0,
+   "link_to": "Accounting Dimension",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "Cost Center",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Cost Center Allocation",
+   "link_count": 0,
+   "link_to": "Cost Center Allocation",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "Cost Center",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Budget Variance Report",
+   "link_count": 0,
+   "link_to": "Budget Variance Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Monthly Distribution",
+   "link_count": 0,
+   "link_to": "Monthly Distribution",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Opening Invoice Creation Tool",
+   "link_count": 0,
+   "link_to": "Opening Invoice Creation Tool",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Chart of Accounts Importer",
+   "link_count": 0,
+   "link_to": "Chart of Accounts Importer",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Period Closing Voucher",
+   "link_count": 0,
+   "link_to": "Period Closing Voucher",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tax Masters",
+   "link_count": 7,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sales Taxes and Charges Template",
+   "link_count": 0,
+   "link_to": "Sales Taxes and Charges Template",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Purchase Taxes and Charges Template",
+   "link_count": 0,
+   "link_to": "Purchase Taxes and Charges Template",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Item Tax Template",
+   "link_count": 0,
+   "link_to": "Item Tax Template",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tax Category",
+   "link_count": 0,
+   "link_to": "Tax Category",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tax Rule",
+   "link_count": 0,
+   "link_to": "Tax Rule",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tax Withholding Category",
+   "link_count": 0,
+   "link_to": "Tax Withholding Category",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Lower Deduction Certificate",
+   "link_count": 0,
+   "link_to": "Lower Deduction Certificate",
+   "link_type": "DocType",
+   "onboard": 0,
+   "only_for": "India",
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-08-06 15:20:04.861660",
+ "modified_by": "supervisor@company.com",
+ "module": "Accounts",
+ "name": "Accounting",
+ "number_cards": [
+  {
+   "label": "Total Outgoing Bills",
+   "number_card_name": "Total Outgoing Bills"
+  },
+  {
+   "label": "Total Incoming Bills",
+   "number_card_name": "Total Incoming Bills"
+  },
+  {
+   "label": "Total Incoming Payment",
+   "number_card_name": "Total Incoming Payment"
+  },
+  {
+   "label": "Total Outgoing Payment",
+   "number_card_name": "Total Outgoing Payment"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "restrict_to_domain": "",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Accounts Manager"
+  },
+  {
+   "role": "Accounts User"
+  }
+ ],
+ "sequence_id": 8.0,
+ "shortcuts": [
+  {
+   "custom_background": "#761ACB",
+   "icon": "chart",
+   "label": "Chart of Accounts",
+   "link_to": "Account",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "custom_background": "#449CF0",
+   "doc_view": "List",
+   "icon": "building-columns",
+   "label": "Company",
+   "link_to": "Company",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "custom_background": "#4F9DD9",
+   "doc_view": "List",
+   "icon": "income",
+   "label": "Budget",
+   "link_to": "Budget",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "custom_background": "#4463F0",
+   "doc_view": "List",
+   "icon": "list-check",
+   "label": "Currency",
+   "link_to": "Currency",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "custom_background": "#29CD42",
+   "doc_view": "List",
+   "icon": "box-open",
+   "label": "Opening Invoice Creation Tool",
+   "link_to": "Opening Invoice Creation Tool",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "custom_background": "#ECAD4B",
+   "doc_view": "List",
+   "icon": "gear",
+   "label": "Accounts Settings",
+   "link_to": "Accounts Settings",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "custom_background": "#B4CD29",
+   "doc_view": "List",
+   "icon": "file-invoice-dollar",
+   "label": "Accounting Dimension",
+   "link_to": "Accounting Dimension",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "custom_background": "#EC864B",
+   "doc_view": "List",
+   "icon": "cart-reply",
+   "label": "Currency Exchange",
+   "link_to": "Currency Exchange",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "custom_background": "#ECAD4B",
+   "doc_view": "List",
+   "icon": "file-check",
+   "label": "Chart of Accounts Importer",
+   "link_to": "Chart of Accounts Importer",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "custom_background": "#4F9DD9",
+   "doc_view": "List",
+   "icon": "list",
+   "label": "Fiscal Year",
+   "link_to": "Fiscal Year",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "custom_background": "#4F9DD9",
+   "doc_view": "List",
+   "icon": "list-check",
+   "label": "Cost Center Allocation",
+   "link_to": "Cost Center Allocation",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "custom_background": "#B4CD29",
+   "doc_view": "List",
+   "icon": "file-check",
+   "label": "Exchange Rate Revaluation",
+   "link_to": "Exchange Rate Revaluation",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "custom_background": "#4F9DD9",
+   "doc_view": "List",
+   "icon": "hand-holding-dollar",
+   "label": "Period Closing Voucher",
+   "link_to": "Period Closing Voucher",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "custom_background": "#1b3ecc",
+   "icon": "list-check",
+   "label": "Journal Entry",
+   "link_to": "Journal Entry",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "custom_background": "#EC864B",
+   "doc_view": "List",
+   "icon": "layers",
+   "label": "Budget Variance Report",
+   "link_to": "Budget Variance Report",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "custom_background": "#761ACB",
+   "doc_view": "List",
+   "icon": "building-columns",
+   "label": "Bank",
+   "link_to": "Bank",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "custom_background": "#4F9DD9",
+   "icon": "money-check-dollar",
+   "label": "Payment Entry",
+   "link_to": "Payment Entry",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "custom_background": "#4F9DD9",
+   "doc_view": "List",
+   "icon": "accounting",
+   "label": "Finance Book",
+   "link_to": "Finance Book",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "custom_background": "#449CF0",
+   "doc_view": "List",
+   "icon": "income",
+   "label": "Bank Account",
+   "link_to": "Bank Account",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "custom_background": "#B4CD29",
+   "doc_view": "List",
+   "icon": "accounting",
+   "label": "Accounting Period",
+   "link_to": "Accounting Period",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "custom_background": "#4F9DD9",
+   "doc_view": "List",
+   "icon": "income",
+   "label": "Bank Clearance",
+   "link_to": "Bank Clearance",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "custom_background": "#761ACB",
+   "doc_view": "List",
+   "icon": "income",
+   "label": "Payment Term",
+   "link_to": "Payment Term",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "custom_background": "#ECAD4B",
+   "doc_view": "List",
+   "icon": "gear",
+   "label": "Bank Reconciliation Tool",
+   "link_to": "Bank Reconciliation Tool",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "custom_background": "#EC864B",
+   "doc_view": "List",
+   "icon": "table_2",
+   "label": "Journal Entry Template",
+   "link_to": "Journal Entry Template",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "custom_background": "#449CF0",
+   "doc_view": "List",
+   "icon": "list",
+   "label": "Terms and Conditions",
+   "link_to": "Terms and Conditions",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "custom_background": "#4F9DD9",
+   "doc_view": "List",
+   "icon": "money-bill-transfer",
+   "label": "Mode of Payment",
+   "link_to": "Mode of Payment",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "custom_background": "#761ACB",
+   "doc_view": "List",
+   "icon": "table_2",
+   "label": "Sales Taxes and Charges Template",
+   "link_to": "Sales Taxes and Charges Template",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "custom_background": "#449CF0",
+   "doc_view": "List",
+   "icon": "table_2",
+   "label": "Item Tax Template",
+   "link_to": "Item Tax Template",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "custom_background": "#449CF0",
+   "doc_view": "List",
+   "icon": "branch",
+   "label": "Tax Category",
+   "link_to": "Tax Category",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "custom_background": "#449CF0",
+   "doc_view": "List",
+   "icon": "gear",
+   "label": "Tax Rule",
+   "link_to": "Tax Rule",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "custom_background": "#4F9DD9",
+   "doc_view": "List",
+   "icon": "file-check",
+   "label": "Tax Withholding Category",
+   "link_to": "Tax Withholding Category",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "custom_background": "#4F9DD9",
+   "doc_view": "List",
+   "icon": "list",
+   "label": "Cost Center",
+   "link_to": "Cost Center",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Accounting"
+}

@@ -1,0 +1,346 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:license_plate",
+ "creation": "2016-09-03 03:33:27.680331",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "license_plate",
+  "make",
+  "column_break_3",
+  "model",
+  "traccar_id",
+  "column_break_xfiq",
+  "asset",
+  "vehicle_details",
+  "last_odometer",
+  "acquisition_date",
+  "location",
+  "column_break_8",
+  "chassis_no",
+  "vehicle_value",
+  "employee",
+  "insurance_details",
+  "insurance_company",
+  "policy_no",
+  "column_break_15",
+  "start_date",
+  "end_date",
+  "additional_details",
+  "fuel_type",
+  "uom",
+  "carbon_check_date",
+  "is_fuel_tanker",
+  "is_multi_compartment",
+  "total_tanker_capacity",
+  "column_break_21",
+  "color",
+  "wheels",
+  "doors",
+  "amended_from",
+  "current_total_fuel_level",
+  "fuel_tanker_type",
+  "compartments_section",
+  "compartments",
+  "single_compartment_section",
+  "single_fuel_type",
+  "single_current_level",
+  "overall_fill_percentage"
+ ],
+ "fields": [
+  {
+   "fieldname": "license_plate",
+   "fieldtype": "Data",
+   "label": "License Plate",
+   "no_copy": 1,
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "make",
+   "fieldtype": "Data",
+   "label": "Make",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "model",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Model",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vehicle_details",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "last_odometer",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Odometer Value (Last)",
+   "no_copy": 1,
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "acquisition_date",
+   "fieldtype": "Date",
+   "label": "Acquisition Date"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "chassis_no",
+   "fieldtype": "Data",
+   "label": "Chassis No"
+  },
+  {
+   "fieldname": "vehicle_value",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Vehicle Value",
+   "print_hide_if_no_value": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "insurance_details",
+   "fieldtype": "Section Break",
+   "label": "Insurance Details"
+  },
+  {
+   "fieldname": "insurance_company",
+   "fieldtype": "Data",
+   "label": "Insurance Company"
+  },
+  {
+   "fieldname": "policy_no",
+   "fieldtype": "Data",
+   "label": "Policy No"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "additional_details",
+   "fieldtype": "Section Break",
+   "label": "Additional Details"
+  },
+  {
+   "fieldname": "fuel_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Fuel Type",
+   "options": "Petrol\nDiesel\nNatural Gas\nElectric",
+   "reqd": 1
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Fuel UOM",
+   "options": "UOM",
+   "reqd": 1
+  },
+  {
+   "fieldname": "carbon_check_date",
+   "fieldtype": "Date",
+   "label": "Last Carbon Check"
+  },
+  {
+   "fieldname": "column_break_21",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "color",
+   "fieldtype": "Data",
+   "label": "Color"
+  },
+  {
+   "fieldname": "wheels",
+   "fieldtype": "Int",
+   "label": "Wheels"
+  },
+  {
+   "fieldname": "doors",
+   "fieldtype": "Int",
+   "label": "Doors"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Vehicle",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "traccar_id",
+   "fieldtype": "Data",
+   "label": "GPS Id"
+  },
+  {
+   "fieldname": "column_break_xfiq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "asset",
+   "fieldtype": "Link",
+   "label": "Asset",
+   "options": "Asset"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.is_fuel_tanker",
+   "description": "Cocher si la citerne contient plusieurs compartiments",
+   "fieldname": "is_multi_compartment",
+   "fieldtype": "Check",
+   "label": "Citerne multi-compartiments"
+  },
+  {
+   "depends_on": "eval:doc.is_fuel_tanker",
+   "description": "Capacit\u00e9 totale de la citerne en litres",
+   "fieldname": "total_tanker_capacity",
+   "fieldtype": "Float",
+   "label": "Capacit\u00e9 totale citerne (L)"
+  },
+  {
+   "depends_on": "eval:doc.is_fuel_tanker",
+   "description": "Niveau total actuel calcul\u00e9 automatiquement",
+   "fieldname": "current_total_fuel_level",
+   "fieldtype": "Float",
+   "label": "Niveau total actuel (L)",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.is_fuel_tanker",
+   "fieldname": "fuel_tanker_type",
+   "fieldtype": "Select",
+   "label": "Type de citerne",
+   "options": "Transport\nDistribution\nStockage"
+  },
+  {
+   "depends_on": "eval:doc.is_fuel_tanker && doc.is_multi_compartment",
+   "fieldname": "compartments_section",
+   "fieldtype": "Section Break",
+   "label": "Gestion des compartiments"
+  },
+  {
+   "depends_on": "eval:doc.is_fuel_tanker && doc.is_multi_compartment",
+   "fieldname": "compartments",
+   "fieldtype": "Table",
+   "label": "Compartiments",
+   "options": "Vehicle Compartment"
+  },
+  {
+   "depends_on": "eval:doc.is_fuel_tanker && !doc.is_multi_compartment",
+   "fieldname": "single_fuel_type",
+   "fieldtype": "Link",
+   "label": "Type de carburant",
+   "options": "Item"
+  },
+  {
+   "depends_on": "eval:doc.is_fuel_tanker && !doc.is_multi_compartment",
+   "fieldname": "single_compartment_section",
+   "fieldtype": "Section Break",
+   "label": "Compartiment unique"
+  },
+  {
+   "depends_on": "eval:doc.is_fuel_tanker && !doc.is_multi_compartment",
+   "fieldname": "single_current_level",
+   "fieldtype": "Float",
+   "label": "Niveau actuel (L)"
+  },
+  {
+   "default": "0",
+   "description": "Cocher si le v\u00e9hicule est une citerne pour transport de carburant",
+   "fieldname": "is_fuel_tanker",
+   "fieldtype": "Check",
+   "label": "Est une citerne \u00e0 carburant"
+  },
+  {
+   "fieldname": "overall_fill_percentage",
+   "fieldtype": "Percent",
+   "label": "Pourcentage de remplissage global",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "modified": "2025-10-01 05:01:47.713393",
+ "modified_by": "Administrator",
+ "module": "Setup",
+ "name": "Vehicle",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Fleet Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Delivery User"
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Delivery Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "row_format": "Dynamic",
+ "search_fields": "license_plate,location,model",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

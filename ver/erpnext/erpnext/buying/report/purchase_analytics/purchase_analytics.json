@@ -1,0 +1,39 @@
+{
+ "add_total_row": 1,
+ "columns": [],
+ "creation": "2025-12-02 18:42:33.386628",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2026-05-20 14:02:39.571132",
+ "modified_by": "Administrator",
+ "module": "Buying",
+ "name": "Purchase Analytics",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Purchase Order",
+ "report_name": "Purchase Analytics",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "Purchase Manager"
+  },
+  {
+   "role": "Purchase User"
+  },
+  {
+   "role": "Distributor"
+  },
+  {
+   "role": "GDS"
+  },
+  {
+   "role": "ADV"
+  }
+ ],
+ "timeout": 0
+}

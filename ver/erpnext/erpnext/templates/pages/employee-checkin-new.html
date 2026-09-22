@@ -1,0 +1,120 @@
+{% extends "templates/web.html" %}
+{% set show_sidebar = true %}
+
+{% block page_content %}
+<h1>{{ _("New Employee Checkin") }}</h1>
+
+<div id="form-loading">{{ _("Chargement...") }}</div>
+
+<form method="POST" class="web-form" id="employee-checkin-form" style="display: none;">
+    <input type="hidden" name="employee" id="employee">
+    <input type="hidden" name="employee_name" id="employee_name">
+    <input type="hidden" name="company" id="company">
+
+    <div class="form-group">
+        <label>{{ _("Log Type") }}</label>
+        <select class="form-control" name="log_type" id="log_type" required>
+            <option value="IN">{{ _("IN") }}</option>
+            <option value="OUT">{{ _("OUT") }}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>{{ _("Time") }}</label>
+        <input type="datetime-local" class="form-control" name="time" id="time" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">{{ _("Submit") }}</button>
+</form>
+
+<div id="form-response" style="margin-top: 15px;"></div>
+
+<script>
+async function loadCheckinDefaults() {
+    try {
+        const res = await fetch("/api/method/hrms.hr.doctype.employee_checkin.employee_checkin.get_employee_checkin_defaults");
+        const data = await res.json();
+        console.log("resdata",data)
+
+        const message = data.message;
+
+        document.getElementById("employee").value = message.employee;
+        document.getElementById("employee_name").value = message.employee_name;
+        document.getElementById("company").value = message.company;
+        document.getElementById("time").value = message.time.replace(" ", "T"); // pour input datetime-local
+
+        document.getElementById("form-loading").style.display = "none";
+        document.getElementById("employee-checkin-form").style.display = "block";
+    } catch (err) {
+        document.getElementById("form-response").innerHTML = `<div class="alert alert-danger">Erreur lors du chargement.</div>`;
+        console.error(err);
+    }
+}
+
+function getCSRFToken() {
+    if (typeof frappe !== "undefined" && frappe.csrf_token) {
+        return frappe.csrf_token;
+    }
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; csrf_token=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+    return "";
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    loadCheckinDefaults();
+});
+
+document.getElementById("employee-checkin-form").addEventListener("submit", async function (event) {
+    event.preventDefault();
+    const form = event.target;
+    const formData = new FormData(form);
+    const payload = {
+        employee: formData.get("employee"),
+        employee_name: formData.get("employee_name"),
+        company: formData.get("company"),
+        log_type:formData.get("log_type"),
+        time:formData.get("time")
+    };
+    try {
+
+        const csrfToken = getCSRFToken();
+
+        const res = await fetch("/api/resource/Employee Checkin", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-Frappe-CSRF-Token": csrfToken
+            },
+            body: JSON.stringify(payload)
+        });
+
+        const result = await res.json();
+        console.log("csrfToken",result)
+
+        const responseDiv = document.getElementById("form-response");
+
+        if (result.data && result.data.name) {
+            responseDiv.innerHTML = `
+                <div class="alert alert-success">
+                    Pointage enregistré avec succès : <strong>${result.data.name}</strong>
+                </div>`;
+            form.reset();
+            loadCheckinDefaults();
+        } else {
+            const msg = result._server_messages
+                ? JSON.parse(result._server_messages).join("<br>")
+                : result.message || "Une erreur est survenue.";
+            responseDiv.innerHTML = `<div class="alert alert-danger">${msg}</div>`;
+        }
+    } catch (err) {
+        console.error("Erreur:", err);
+        document.getElementById("form-response").innerHTML = `
+            <div class="alert alert-danger">
+                Erreur inattendue. Veuillez vérifier la console.
+            </div>`;
+    }
+});
+</script>
+{% endblock %}

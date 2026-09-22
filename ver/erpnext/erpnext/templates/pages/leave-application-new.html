@@ -1,0 +1,270 @@
+{% extends "templates/web.html" %}
+{% set show_sidebar = true %}
+
+{% block page_content %}
+<h1>{{ _("New Leave Application") }}</h1>
+
+<div id="form-loading">{{ _("Loading...") }}</div>
+
+<form method="POST" class="web-form" id="leave-application-form" style="display: none;">
+    <input type="hidden" name="employee" id="employee">
+    <input type="hidden" name="employee_name" id="employee_name">
+    <input type="hidden" name="company" id="company">
+    <input type="hidden" name="leave_approver" id="leave_approver">
+    <input type="hidden" name="follow_via_email" value="1">
+    <input type="hidden" name="half_day" value="0">
+    <input type="hidden" name="posting_date" id="posting_date">
+
+    <div class="form-group">
+        <label>{{ _("Leave Type") }}</label>
+        <select class="form-control" name="leave_type" id="leave_type" required></select>
+    </div>
+
+    <div class="form-group" style="display: flex; gap: 10px; align-items: flex-start;">
+        <div style="flex: 1;">
+            <label>{{ _("From Date") }}</label>
+            <div class="date-input-container">
+                <input type="date" class="form-control date-input" name="from_date" id="from_date" required>
+                <span class="date-display" id="from_date_display"></span>
+            </div>
+        </div>
+        <div style="flex: 1;">
+            <label>{{ _("To Date") }}</label>
+            <div class="date-input-container">
+                <input type="date" class="form-control date-input" name="to_date" id="to_date" required>
+                <span class="date-display" id="to_date_display"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group" style="display:none;">
+        <label>{{ _("Total Leave Days") }}</label>
+        <input type="number" class="form-control" name="total_leave_days" id="total_leave_days" readonly>
+    </div>
+
+    <div class="form-group">
+        <label>{{ _("Reason") }}</label>
+        <textarea class="form-control" name="reason" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">{{ _("Submit") }}</button>
+</form>
+
+<div id="form-response" style="margin-top: 15px;"></div>
+
+<script>
+// Formatage de la date en jj/MM/aaaa
+function formatDateToFR(dateStr) {
+    if (!dateStr) return "";
+    const date = new Date(dateStr);
+    if (isNaN(date)) return "";
+    const d = String(date.getDate()).padStart(2, '0');
+    const m = String(date.getMonth() + 1).padStart(2, '0');
+    const y = date.getFullYear();
+    return `${d}/${m}/${y}`;
+}
+
+// Mise à jour de l'affichage de la date
+function updateDateDisplay(inputId, displayId) {
+    const input = document.getElementById(inputId);
+    const display = document.getElementById(displayId);
+    display.textContent = formatDateToFR(input.value);
+}
+
+// Configuration des champs date
+function setupDateInputs() {
+    const fromDateInput = document.getElementById("from_date");
+    const toDateInput = document.getElementById("to_date");
+    
+    fromDateInput.addEventListener("change", function() {
+        updateDateDisplay("from_date", "from_date_display");
+        calculateTotalLeaveDays();
+    });
+    
+    toDateInput.addEventListener("change", function() {
+        updateDateDisplay("to_date", "to_date_display");
+        calculateTotalLeaveDays();
+    });
+    
+    // Initialiser l'affichage si des valeurs existent déjà
+    updateDateDisplay("from_date", "from_date_display");
+    updateDateDisplay("to_date", "to_date_display");
+}
+
+async function loadDefaults() {
+    try {
+        const res = await fetch("/api/method/hrms.hr.doctype.leave_application.leave_application.get_new_leave_application_defaults");
+        const data = await res.json();
+        const message = data.message;
+
+        document.getElementById("employee").value = message.employee;
+        document.getElementById("employee_name").value = message.employee_name;
+        document.getElementById("company").value = message.company;
+        document.getElementById("leave_approver").value = message.leave_approver;
+
+        const leaveTypeSelect = document.getElementById("leave_type");
+        leaveTypeSelect.innerHTML = "";
+        message.available_leave_types.forEach(type => {
+            const opt = document.createElement("option");
+            opt.value = type;
+            opt.textContent = type;
+            leaveTypeSelect.appendChild(opt);
+        });
+
+        document.getElementById("form-loading").style.display = "none";
+        document.getElementById("leave-application-form").style.display = "block";
+
+    } catch (err) {
+        document.getElementById("form-response").innerHTML = `<div class="alert alert-danger">Failed to load defaults.</div>`;
+        console.error(err);
+    }
+}
+
+function getTodayDateString() {
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0'); 
+    const dd = String(today.getDate()).padStart(2, '0');
+    return `${yyyy}-${mm}-${dd}`;
+}
+
+function calculateTotalLeaveDays() {
+    const fromDate = document.getElementById("from_date").value;
+    const toDate = document.getElementById("to_date").value;
+    const totalLeaveDaysInput = document.getElementById("total_leave_days");
+
+    if (fromDate && toDate) {
+        const from = new Date(fromDate);
+        const to = new Date(toDate);
+
+        if (to >= from) {
+            const diffTime = to.getTime() - from.getTime();
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1;
+            totalLeaveDaysInput.value = diffDays;
+        } else {
+            totalLeaveDaysInput.value = 0;
+        }
+    } else {
+        totalLeaveDaysInput.value = 0;
+    }
+}
+
+function getCSRFToken() {
+    if (typeof frappe !== "undefined" && frappe.csrf_token) {
+        return frappe.csrf_token;
+    }
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; csrf_token=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+    return "";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    loadDefaults();
+    document.getElementById("posting_date").value = getTodayDateString();
+    setupDateInputs();
+    calculateTotalLeaveDays();
+});
+
+document.getElementById("leave-application-form").addEventListener("submit", async function (event) {
+    event.preventDefault();
+    const form = event.target;
+    const formData = new FormData(form);
+
+    const totalLeaveDays = parseInt(formData.get("total_leave_days") || 0);
+
+    if (totalLeaveDays <= 0) {
+        document.getElementById("form-response").innerHTML = `<div class="alert alert-warning">Veuillez sélectionner des dates valides.</div>`;
+        return;
+    }
+
+    const payload = {
+        employee: formData.get("employee"),
+        employee_name: formData.get("employee_name"),
+        company: formData.get("company"),
+        leave_approver: formData.get("leave_approver"),
+        leave_approver_name: formData.get("leave_approver"),
+        leave_type: formData.get("leave_type"),
+        from_date: formData.get("from_date"),
+        to_date: formData.get("to_date"),
+        letter_head: "En-Tête",
+        description: formData.get("reason"),
+        half_day: parseInt(formData.get("half_day") || 0),
+        follow_via_email: parseInt(formData.get("follow_via_email") || 1),
+        posting_date: formData.get("posting_date"),
+        total_leave_days: totalLeaveDays
+    };
+
+    try {
+        const csrfToken = getCSRFToken();
+        const res = await fetch("/api/resource/Leave Application", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-Frappe-CSRF-Token": csrfToken
+            },
+            body: JSON.stringify(payload)
+        });
+
+        const result = await res.json();
+        const responseDiv = document.getElementById("form-response");
+
+        if (result.data && result.data.name) {
+            responseDiv.innerHTML = `
+                <div class="alert alert-success">
+                    Demande de congé <strong>${result.data.name}</strong> soumise avec succès!
+                </div>`;
+            form.reset();
+            document.getElementById("posting_date").value = getTodayDateString();
+            document.getElementById("total_leave_days").value = "";
+            // Réinitialiser l'affichage des dates
+            updateDateDisplay("from_date", "from_date_display");
+            updateDateDisplay("to_date", "to_date_display");
+        } else {
+            const msg = result._server_messages
+                ? JSON.parse(result._server_messages).join("<br>")
+                : result.message || "Une erreur est survenue.";
+            responseDiv.innerHTML = `<div class="alert alert-danger">${msg}</div>`;
+        }
+    } catch (err) {
+        console.error("err", err);
+        document.getElementById("form-response").innerHTML = `
+            <div class="alert alert-danger">
+                Erreur inattendue. Veuillez vérifier la console.
+            </div>`;
+    }
+});
+</script>
+
+<style>
+.date-input-container {
+    position: relative;
+}
+
+.date-input {
+    padding-right: 100px; /* Espace pour l'affichage */
+}
+
+.date-display {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    pointer-events: none;
+    background: white;
+    padding: 0 5px;
+}
+
+/* Masquer le sélecteur de date natif sur certains navigateurs */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    right: 0;
+    padding: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+</style>
+{% endblock %}

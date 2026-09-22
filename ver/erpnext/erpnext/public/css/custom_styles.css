@@ -1,0 +1,17 @@
+.report.table-scroll-container {
+    max-height: 200px; /* ItesLab: Limits the table height (4 visible rows) */
+    max-width: 600px;  /* ItesLab: Limits the table width (4 visible columns) */
+    overflow: auto;    /* ItesLab: Enables both horizontal and vertical scrolling */
+    display: block;    /* ItesLab: Uses block display to activate scrolling */
+}
+
+.report.table-scroll-container table {
+    width: 100%;       /* ItesLab: Ensures the table takes the full available width */
+    table-layout: fixed; /* ItesLab: Fixes column widths */
+}
+
+.report.table-scroll-container td {
+    word-wrap: break-word; /* ItesLab: Handles long words inside cells */
+    text-overflow: ellipsis; /* ItesLab: Adds ellipsis for overflow text */
+    overflow: hidden; /* ItesLab: Hides overflowing content */
+}
